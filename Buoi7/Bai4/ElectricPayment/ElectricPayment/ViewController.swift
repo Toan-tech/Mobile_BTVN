@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         moneyLabel.layer.cornerRadius = 20
+        moneyLabel.layer.masksToBounds = true
         onChangeButton.layer.cornerRadius = 20
     }
 
@@ -37,12 +38,12 @@ class ViewController: UIViewController {
             a = 50*1.678 + (b-50)*1.734
         } else if b <= 200 {
             a = 50*1.678 + 50*1.734 + (b-100)*2.014
-//        } else if b <= 300 {
-//            a = 50*1.678 + 50*1.734 + 100*2.014 + (b-200)*2.536
-//        } else if b <= 400 {
-//            a = 50*1.678 + 50*1.734 + 100*2.014 + 100*2.536 + (b-300)*2.834
-//        } else {
-//            a = 50*1.678 + 50*1.734 + 100*2.014 + 100*2.536 + 100*2.834 + (b-400)*2.927
+        } else if b <= 300 {
+            a = (1.678 + 1.734)*50 + 100*2.014 + (b-200)*2.536
+        } else if b <= 400 {
+            a = (1.678 + 1.734)*50 + (2.014 + 2.536)*100 + (b-300)*2.834
+        } else {
+            a = (1.678 + 1.734)*50 + (2.014 + 2.536 + 2.834)*100 + (b-400)*2.927
         }
          moneyLabel.text = String(a)
     

@@ -7,7 +7,7 @@ for i in 1..<1000 {
     let a = String(i).count
     var sum = Float(0)
     var b = i
-        while (sum < Float(i) && b%10 != 0) {
+        while (sum < Float(i) && b != 0) {
             sum += powf(Float(b%10), Float(a))
             b = b/10
 }

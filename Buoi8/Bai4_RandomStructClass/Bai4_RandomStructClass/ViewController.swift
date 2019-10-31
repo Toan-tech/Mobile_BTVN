@@ -7,26 +7,25 @@
 //
 
 import UIKit
-
+struct Girl {
+    var name: String = "abc"
+    var color: CGColor = #colorLiteral(red: 0.6973452143, green: 0.8329830266, blue: 0.04936898791, alpha: 1)
+    init(){
+    }
+    init (name: String, color: CGColor){
+        self.name = name
+        self.color = color
+    }
+}
 class ViewController: UIViewController {
-
-    @IBOutlet weak var photoImageView: UIImageView!
     
+    @IBOutlet weak var photoImageView: UIImageView!
     
     @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var onChangeButton: UIButton!
     var array = [Girl]()
-     struct Girl {
-                    var name: String = "abc"
-        var color: CGColor = #colorLiteral(red: 0.6973452143, green: 0.8329830266, blue: 0.04936898791, alpha: 1)
-        init(){
-        }
-        init (name: String, color: CGColor){
-                    self.name = name
-                    self.color = color
-                }
-            }
+    
     let girl1 = Girl(name: "adorable", color: #colorLiteral(red: 0.8329830266, green: 0.3203224096, blue: 0.1106636526, alpha: 1))
     let girl2 = Girl(name: "attractive", color: #colorLiteral(red: 0.2554584033, green: 0.8329830266, blue: 0.1951796338, alpha: 1))
     let girl3 = Girl(name: "beautiful", color: #colorLiteral(red: 0.3611708355, green: 0.8329830266, blue: 0.7209165951, alpha: 1))
@@ -38,7 +37,7 @@ class ViewController: UIViewController {
     let girl9 = Girl(name: "radiant", color: #colorLiteral(red: 0.6729394707, green: 0.6805264144, blue: 0.8329830266, alpha: 1))
     let girl10 = Girl(name: "stunning", color: #colorLiteral(red: 0.4050404505, green: 0.05589028096, blue: 0.3101061812, alpha: 1))
     var girl = Girl()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         photoImageView.contentMode = .scaleAspectFit
@@ -50,19 +49,19 @@ class ViewController: UIViewController {
         label.text = girl.name
         onChangeButton.layer.backgroundColor = girl.color
     }
-
+    
     @IBAction func onPress(_ sender: Any) {
         girl = random()
         photoImageView.image = UIImage.init(named: girl.name)
         label.text = girl.name
         onChangeButton.layer.backgroundColor = girl.color
     }
-   
+    
     func random() -> Girl{
         array = [girl1, girl2, girl3, girl4, girl5, girl6, girl7, girl8, girl9, girl10]
         var a = array.randomElement()!
         if girl.name == a.name {
-           a = random()
+            a = random()
         }
         return a
     }

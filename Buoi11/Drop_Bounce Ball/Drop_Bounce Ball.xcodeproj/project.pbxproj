@@ -13,6 +13,9 @@
 		95DC999C2377E701007FD29B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95DC999A2377E701007FD29B /* Main.storyboard */; };
 		95DC999E2377E703007FD29B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DC999D2377E703007FD29B /* Assets.xcassets */; };
 		95DC99A12377E703007FD29B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95DC999F2377E703007FD29B /* LaunchScreen.storyboard */; };
+		95DC99A92377E722007FD29B /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC99A82377E722007FD29B /* Ball.swift */; };
+		95DC99AB2377F6DB007FD29B /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC99AA2377F6DB007FD29B /* ViewController2.swift */; };
+		95DC99AD237805BC007FD29B /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DC99AC237805BC007FD29B /* ViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		95DC999D2377E703007FD29B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95DC99A02377E703007FD29B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95DC99A22377E703007FD29B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95DC99A82377E722007FD29B /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		95DC99AA2377F6DB007FD29B /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		95DC99AC237805BC007FD29B /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				95DC999D2377E703007FD29B /* Assets.xcassets */,
 				95DC999F2377E703007FD29B /* LaunchScreen.storyboard */,
 				95DC99A22377E703007FD29B /* Info.plist */,
+				95DC99A82377E722007FD29B /* Ball.swift */,
+				95DC99AA2377F6DB007FD29B /* ViewController2.swift */,
+				95DC99AC237805BC007FD29B /* ViewController3.swift */,
 			);
 			path = "Drop_Bounce Ball";
 			sourceTree = "<group>";
@@ -138,6 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DC99AB2377F6DB007FD29B /* ViewController2.swift in Sources */,
+				95DC99A92377E722007FD29B /* Ball.swift in Sources */,
+				95DC99AD237805BC007FD29B /* ViewController3.swift in Sources */,
 				95DC99992377E701007FD29B /* ViewController.swift in Sources */,
 				95DC99952377E701007FD29B /* AppDelegate.swift in Sources */,
 				95DC99972377E701007FD29B /* SceneDelegate.swift in Sources */,

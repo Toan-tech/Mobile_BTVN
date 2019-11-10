@@ -9,22 +9,54 @@
 import UIKit
 
 class ViewController2: UIViewController {
-
+    var ball: BallView!
+    var timer1: Timer!
+    var timer2: Timer!
+    let radius: CGFloat = 50.0
+    var angle: CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ball = BallView(center: CGPoint(x: radius, y: radius),
+            radius: radius,
+            fillColor: UIColor.blue)
+        view.addSubview(ball)
+        timer1 = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector
+            (rotate), userInfo: nil, repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector
+            (move), userInfo: nil, repeats: true)
+}
+    @objc func rotate (){
+        angle += CGFloat.pi/120
+        ball.transform = CGAffineTransform(rotationAngle: angle)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func move(){
+        self.ball.center.y += 1
+        if self.ball.center.y >= self.view.frame.maxY - radius {
+            timer2.invalidate()
+            timer2 = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector
+                (move2), userInfo: nil, repeats: true)
+        }
     }
-    */
-
+    @objc func move2(){
+        self.ball.center.x += 1
+        if self.ball.center.x >= self.view.bounds.maxX - radius {
+            timer2.invalidate()
+            timer2 = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector
+                (move3), userInfo: nil, repeats: true)
+        }
+    }
+    @objc func move3(){
+        self.ball.center.y -= 1
+        if self.ball.center.y <= radius {
+            timer2.invalidate()
+            timer2 = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(move4), userInfo: nil, repeats: true)
+        }
+    }
+    @objc func move4(){
+        self.ball.center.x -= 1
+        if self.ball.center.x <= radius {
+            timer2.invalidate()
+            timer1.invalidate()
+        }
+    }
 }

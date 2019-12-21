@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController {
     @objc func cancel1(){
     navigationController?.popToRootViewController(animated: true)
     }
+   
     @objc func lastView(){
         let last = BackToStartViewController()
         navigationController?.pushViewController(last, animated: true)
